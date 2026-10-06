@@ -18,15 +18,15 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: textarea
     id: acceptance_criteria
     attributes:
       label: Acceptance criteria
-      description: Check each criterion once completed.
-      options:
-        - label: Criterion 1
-        - label: Criterion 2
-        - label: Criterion 3
+      description: List each criterion as a checkbox. Check each one once completed.
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+        - [ ] Criterion 3
 
   - type: textarea
     id: comments
