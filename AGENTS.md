@@ -1,20 +1,37 @@
-# Contributing
+# AGENTS.md
 
-## Setup
+## Project context
 
-Run `./setup.sh` to set up the project.
+Training repository for collaborative GitHub workflows (issues, pull requests, reviews, Conventional Commits, ADRs). The stack runs ~15 Docker services across two servers behind a reverse proxy. All infrastructure changes go through a reviewed pull request — no direct edits in production.
 
-## Tests
+## Verification commands
 
-Run tests with `npm test`.
+Check that your branch is up to date with main before opening a PR:
 
-## Workflow
+```bash
+git fetch origin
+git log origin/main..HEAD --oneline
+```
 
-- Create a branch
-- Make changes
-- Open a PR
+Verify your commit messages follow Conventional Commits before pushing:
 
-## Notes
+```bash
+git log --oneline
+```
 
-Be careful with the database.
-Don't break things.
+## Conventions
+
+- **Branches:** `<type>/<short-description>` — e.g. `feat/user-auth`, `docs/4-documentation`, `fix/vpn-firewall`
+- **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) — `type(scope): description` in lowercase, imperative mood
+- **PR title:** same format as the commit message
+- **PR description:** fill every section of the template; include `Closes #<issue-number>` when applicable
+- **Merge strategy:** Squash and merge only — keeps main history linear
+- **Review comments:** follow [Conventional Comments](https://conventionalcomments.org/) — `label (decoration): subject`
+
+## Forbidden
+
+- Do not push directly to `main` — all changes go through a pull request
+- Do not merge your own PR without at least one approval
+- Do not use `--force` or `--no-verify` without explicit team agreement
+- Do not commit secrets, credentials, or `.env` files
+- Do not skip the PR description template
