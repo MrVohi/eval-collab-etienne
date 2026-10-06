@@ -1,0 +1,62 @@
+name: Bug / Incident
+description: Report a bug or a production incident
+labels: [bug]
+body:
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Select the priority of this bug / incident.
+      options:
+        - "P0 – Critical (production down)"
+        - "P1 – High (major user impact)"
+        - "P2 – Medium (partial degradation)"
+        - "P3 – Low (minor / cosmetic)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Environment, version, anything that helps understand the situation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What is actually happening.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / screenshots
+      description: Add logs or screenshots if available.
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional comments

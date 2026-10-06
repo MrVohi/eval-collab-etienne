@@ -1,0 +1,34 @@
+name: Evolution / Documentation
+description: Describe an evolution or documentation task
+labels: [evolution, documentation]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Context and motivation behind this evolution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Work description
+      description: Detail the work to be done.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Check each criterion once completed.
+      options:
+        - label: Criterion 1
+        - label: Criterion 2
+        - label: Criterion 3
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional comments
